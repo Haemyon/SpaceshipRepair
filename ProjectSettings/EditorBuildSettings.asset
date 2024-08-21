@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/SpaceshipRepair/Scenes/MainMenu.unity
+    guid: 5eda09c382d70ab47992826b3640e991
+  - enabled: 1
+    path: Assets/SpaceshipRepair/Scenes/GameScene.unity
+    guid: 8aa3989fca9ed0d49968bc3608912adf
   m_configObjects: {}
