@@ -45,7 +45,8 @@ public class GameOverMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        Debug.Log("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitToMainMenu()
