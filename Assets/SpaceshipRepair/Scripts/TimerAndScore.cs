@@ -9,21 +9,26 @@ namespace SpaceShipRepair
 {
     public class TimerAndScore : MonoBehaviour
     {
+        public GameObject countDownUI;
         public Text timerText;
         public Text scoreText;
         public Text repairChanceText;
         public GameOverMenu gameOverMenu;  // GameOverMenu를 참조
         public GameObject boom;
+        public Text countDownText;
 
         private float timer = 60f;
         private int score = 0;
         private int repairchance = 4;
+        private float countDown = 3f;
 
+        bool gameStart = false;
 
         void Start()
         {
+            AudioManager.Instance.PlaySFX("CountDown");
             FindAnyObjectByType<SpawnRocket>().Spawn();
-            Time.timeScale = 1.0f;
+            Time.timeScale = 0.9f;
             if (gameOverMenu == null)
             {
                 Debug.LogError("GameOverMenu가 할당되지 않았습니다. 인스펙터에서 참조를 설정해주세요.");
@@ -33,13 +38,31 @@ namespace SpaceShipRepair
 
         void Update()
         {
-            timer -= Time.deltaTime;
-            timerText.text = Mathf.Ceil(timer).ToString();
-            if (timer < 0)
+            if (!gameStart)
             {
-                timer = 0;
-                Time.timeScale = 0;
-                GameOver();
+                countDown -= Time.deltaTime;
+                countDownText.text = Mathf.Ceil(countDown).ToString();
+                if (countDown<=0)
+                {
+                    countDown = 0;
+                    Debug.Log("Game Start");
+                    countDownUI.SetActive(false);
+                    gameStart = true;
+                }
+            }
+
+            if (gameStart)
+            {
+                Time.timeScale = 1.0f;
+                timer -= Time.deltaTime;
+                timerText.text = Mathf.Ceil(timer).ToString();
+                if (timer < 0)
+                {
+                    timer = 0;
+                    Time.timeScale = 0;
+                    gameStart = false;
+                    GameOver();
+                }
             }
         }
 
@@ -62,7 +85,7 @@ namespace SpaceShipRepair
             gameOverMenu.ShowGameOverMenu(score);
         }
 
-        public async void RepairTry() 
+        public async void RepairTry()
         {
             repairchance--;
             repairChanceText.text = repairchance.ToString();

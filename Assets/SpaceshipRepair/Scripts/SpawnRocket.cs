@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
-public class SpawnRocket : MonoBehaviour
+namespace SpaceShipRepair
 {
-    private Rocket spawnRocket;
 
-    [SerializeField] private List<Rocket> rockets;
-    public void Spawn()
+    public class SpawnRocket : MonoBehaviour
     {
-        int randomIndex = Random.Range(0, 3);
-        spawnRocket = rockets[randomIndex];
-        //Debug.Log("Spawn");
-        Instantiate(spawnRocket, transform.position, Quaternion.identity);
-        //Debug.Log("Spawn Fin");
+        private Rocket spawnRocket;
+
+        [SerializeField] private List<Rocket> rockets;
+        public void Spawn()
+        {
+            int randomIndex = Random.Range(0, 3);
+            spawnRocket = rockets[randomIndex];
+            //Debug.Log("Spawn");
+            Instantiate(spawnRocket, transform.position, Quaternion.identity);
+            //Debug.Log("Spawn Fin");
+        }
     }
 }
