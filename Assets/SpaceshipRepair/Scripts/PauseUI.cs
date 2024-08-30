@@ -19,18 +19,21 @@ namespace SpaceShipRepair
         public void ShowPause()
         {
             Pause.SetActive(true);
+            FindAnyObjectByType<TimerAndScore>().pause = true;
             Time.timeScale = 0;
         }
 
         public void ClosePause()
         {
             Pause.SetActive(false);
+            FindAnyObjectByType<TimerAndScore>().pause = false;
             Time.timeScale = 1.0f;
         }
 
         public void Continue()
         {
             Pause.SetActive(false);
+            FindAnyObjectByType<TimerAndScore>().pause = false;
             Time.timeScale = 1.0f;
         }
 
