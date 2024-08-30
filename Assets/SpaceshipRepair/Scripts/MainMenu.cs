@@ -3,20 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+namespace SpaceShipRepair
 {
-    public void StartGame()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene("GameScene");
-    }
+        public GameObject Settings;
+        public GameObject Info;
 
-    public void OpenSettings()
-    {
-        // 설정 화면 열기
-    }
+        void Start()
+        {
+            Settings.SetActive(false);
+            Info.SetActive(false);
+        }
 
-    public void QuitGame()
-    {
-        Application.Quit();
+        public void ShowSettings()
+        {
+            Settings.SetActive(true);
+        }
+
+        public void ShowInfo()
+        {
+            Info.SetActive(true);
+        }
+
+        public void CloseSettings()
+        {
+            Settings.SetActive(false);
+        }
+
+        public void CloseInfo()
+        {
+            Info.SetActive(false);
+        }
+
+        public void StartGame()
+        {
+            AudioManager.Instance.PlaySFX("Game_Start");
+            SceneManager.LoadScene("GameScene");
+        }
     }
 }

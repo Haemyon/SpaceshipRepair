@@ -2,35 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+namespace SpaceShipRepair
 {
-    public static GameData instance;
-
-    void Awake()
+    public class GameData : MonoBehaviour
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+        public static GameData instance;
 
-    public void SaveScore(int score)
-    {
-        PlayerPrefs.SetInt("CurrentScore", score);
-        int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        if (score > highScore)
+        void Awake()
         {
-            PlayerPrefs.SetInt("HighScore", score);
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-    }
 
-    public int LoadHighScore()
-    {
-        return PlayerPrefs.GetInt("HighScore", 0);
+        public void SaveScore(int score)
+        {
+            PlayerPrefs.SetInt("CurrentScore", score);
+            int highScore = PlayerPrefs.GetInt("HighScore", 0);
+            if (score > highScore)
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+        }
+
+        public int LoadHighScore()
+        {
+            return PlayerPrefs.GetInt("HighScore", 0);
+        }
     }
 }

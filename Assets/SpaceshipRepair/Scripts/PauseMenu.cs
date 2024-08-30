@@ -3,44 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+namespace SpaceShipRepair
 {
-    public GameObject pauseMenuUI;
-    private bool isPaused = false;
-
-    void Update()
+    public class PauseMenu : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        public GameObject pauseMenuUI;
+        private bool isPaused = false;
+
+        void Update()
         {
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            }
-            else
-            {
-                Pause();
+                if (isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
-    }
 
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-    }
+        public void Resume()
+        {
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
 
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
-    }
+        void Pause()
+        {
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
 
-    public void QuitToMainMenu()
-    {
-        Time.timeScale = 1f;
-        // 메인 메뉴로 돌아가는 로직 추가
-        SceneManager.LoadScene("MainMenu");
+        public void QuitToMainMenu()
+        {
+            Time.timeScale = 1f;
+            // 메인 메뉴로 돌아가는 로직 추가
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

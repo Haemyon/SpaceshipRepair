@@ -32,6 +32,6 @@ public class GameStart : MonoBehaviour
         // 게임 시작 로직 구현
         Debug.Log("게임이 시작되었습니다.");
         // 타임 어택 시작 로직 등 추가
-        FindObjectOfType<TimerAndScore>().StartTimer();
+        FindObjectOfType<SpaceShipRepair.TimerAndScore>().StartTimer();
     }
 }
