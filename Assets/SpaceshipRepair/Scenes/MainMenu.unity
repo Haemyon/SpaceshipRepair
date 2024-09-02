@@ -152,31 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154d5fccd944fe940a908f715431cc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSources:
-  - {fileID: 0}
-  - {fileID: 0}
-  BgmClip:
-  - ID: BGM
-    clip: {fileID: 8300000, guid: 700e63d58da19cb45a12cb4cf82ee08e, type: 3}
-  EffectClip:
-  - ID: CountDown
-    clip: {fileID: 8300000, guid: a4ad0d5daef5ba34ebdcd107bd86eb9e, type: 3}
-  - ID: Explosion
-    clip: {fileID: 8300000, guid: 7925a3cebe329ca42a50247c84e6f513, type: 3}
-  - ID: Game_Start
-    clip: {fileID: 8300000, guid: 1892f9850a341bc41b4144faecb49501, type: 3}
-  - ID: Launch
-    clip: {fileID: 8300000, guid: 58c513155a38ac249a7a1d9e5e8afe93, type: 3}
-  - ID: On_Off_BTN
-    clip: {fileID: 8300000, guid: 80092a8ae1888f744b91babf2b756f25, type: 3}
-  - ID: Parts_Click
-    clip: {fileID: 8300000, guid: d1fb381a873a1bf488c79557588b5945, type: 3}
-  - ID: Parts_Drop
-    clip: {fileID: 8300000, guid: c93b197a428c1694c8de33e0fc89b94b, type: 3}
-  - ID: UI_Close_BTN
-    clip: {fileID: 8300000, guid: d020444860076044ea3697d08db80a6a, type: 3}
-  - ID: UI_Open_BTN
-    clip: {fileID: 8300000, guid: 047898bf87fee5c4db5c5ddb498e3294, type: 3}
 --- !u!4 &23403184
 Transform:
   m_ObjectHideFlags: 0
@@ -1316,11 +1291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1514,6 +1489,7 @@ GameObject:
   - component: {fileID: 961739752}
   - component: {fileID: 961739751}
   - component: {fileID: 961739750}
+  - component: {fileID: 961739754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1639,6 +1615,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961739754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961739749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec6fa58607d27447b432df7f04b6e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &969610537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,11 +2822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -3257,11 +3245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
